@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자재관리 대시보드</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>자재관리</h1>
+        <nav>
+          <a class="active" href="#">대시보드</a>
+          <a href="#">입고관리</a>
+          <a href="#">출고관리</a>
+          <a href="#">재고현황</a>
+          <a href="#">발주요청</a>
+          <a href="#">리포트</a>
+        </nav>
+      </aside>
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="greeting">오늘의 자재 운영 현황</p>
+            <h2>자재관리 기본 대시보드</h2>
+          </div>
+          <button class="primary-btn">신규 발주 등록</button>
+        </header>
+        <section class="metrics-grid">
+          <article class="metric-card"><p>총 재고 품목</p><strong>1,248</strong><span>전일 대비 +24</span></article>
+          <article class="metric-card"><p>안전재고 미달</p><strong>37</strong><span>긴급 확인 필요</span></article>
+          <article class="metric-card"><p>오늘 입고 예정</p><strong>16건</strong><span>오전 9:00 ~ 오후 5:00</span></article>
+          <article class="metric-card"><p>출고 대기</p><strong>9건</strong><span>출고 우선순위 적용 중</span></article>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
