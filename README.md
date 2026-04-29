@@ -1,5 +1,8 @@
-﻿# 자재관리 대시보드
+# 📊 발주·입고 KPI 대시보드
 
-- Pages URL: https://johnchoi112.github.io/cj_work_page/
-- 로컬 실행:
-  python -m http.server 4173
+> 🖥️ GitHub Pages 기반 정적 웹사이트로, 엑셀 파일 업로드 없이도 브라우저에서 **발주 및 입고 KPI 대시보드**를 실시간 생성합니다.  
+> 💻 서버 필요 없이 모든 로직을 클라이언트侧(브라우저)에서 처리 → **보안·성능 우수**, **GitHub Pages 배포 가능**
+
+---
+
+## 📁 프로젝트 구조
