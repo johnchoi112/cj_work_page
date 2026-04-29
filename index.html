@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>발주·입고 KPI 대시보드</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <h1>자재 KPI</h1>
+        <p>거래처별 미입고율 분석</p>
+        <nav>
+          <a class="active" href="#">Dashboard</a>
+          <a href="#">거래처별 미입고율</a>
+          <a href="#">발주총괄진행현황</a>
+          <a href="#">입고현황</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="toolbar">
+          <div class="filters">
+            <label>기준월 <input id="monthFilter" type="month" /></label>
+            <label>거래처 <input id="vendorFilter" type="text" placeholder="거래처명 검색" /></label>
+            <button id="applyFilterBtn" class="btn light">필터 적용</button>
+          </div>
+          <button id="sampleDataBtn" class="btn">샘플 데이터</button>
+        </header>
+
+        <section class="upload card">
+          <div>
+            <h3>발주총괄진행현황 업로드</h3>
+            <p>예시 컬럼: 거래처, 수량, 입고검사수량, 입고의뢰수량, 입고처리수량, 납기일자</p>
+            <input id="orderFile" type="file" accept=".xlsx,.xls,.csv" />
+          </div>
+          <div>
+            <h3>입고현황 업로드</h3>
+            <p>필수 반영 컬럼: 거래처, 입고일자, 입고수량 (제공해주신 상세 컬럼셋 지원)</p>
+            <input id="inboundFile" type="file" accept=".xlsx,.xls,.csv" />
+          </div>
+          <div class="row-actions">
+            <button id="analyzeBtn" class="btn">엑셀 분석 실행</button>
+            <span id="statusText">대기중</span>
+          </div>
+        </section>
+
+        <section class="kpis">
+          <article class="kpi"><p>총 거래처</p><strong id="mVendor">0</strong></article>
+          <article class="kpi"><p>평균 미입고율</p><strong id="mRate">0.0%</strong></article>
+          <article class="kpi"><p>총 발주수량</p><strong id="mOrder">0</strong></article>
+          <article class="kpi"><p>총 입고수량</p><strong id="mInbound">0</strong></article>
+        </section>
+
+        <section class="charts">
+          <article class="card chart"><h3>거래처별 미입고율 (%)</h3><canvas id="rateChart"></canvas></article>
+          <article class="card chart"><h3>발주 진행 분포</h3><canvas id="progressChart"></canvas></article>
+          <article class="card chart full"><h3>입고일자별 입고수량 추이</h3><canvas id="trendChart"></canvas></article>
+        </section>
+
+        <section class="card table-wrap">
+          <h3>거래처 요약</h3>
+          <table>
+            <thead><tr><th>거래처</th><th>발주수량</th><th>입고수량</th><th>미입고수량</th><th>미입고율(%)</th></tr></thead>
+            <tbody id="summaryBody"><tr><td colspan="5">데이터 없음</td></tr></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

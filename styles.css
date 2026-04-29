@@ -1,0 +1,35 @@
+:root { --blue1:#4a9cf3; --blue2:#2d6ce8; --bg:#e8f0fb; --card:#fff; --text:#133056; --muted:#6f86a8; }
+* { box-sizing:border-box; margin:0; padding:0; font-family:"Malgun Gothic","맑은 고딕",sans-serif; }
+body { background:linear-gradient(180deg,#5aa3ef,#78b9f7 160px,#e8f0fb 160px); color:var(--text); }
+.layout { min-height:100vh; display:grid; grid-template-columns:230px 1fr; }
+.sidebar { background:linear-gradient(180deg,#3c78df,#2e5dca); color:#fff; padding:24px 16px; }
+.sidebar h1 { font-size:30px; margin-bottom:6px; }
+.sidebar p { font-size:13px; opacity:.9; margin-bottom:20px; }
+.sidebar nav { display:grid; gap:10px; }
+.sidebar a { color:#eef6ff; text-decoration:none; padding:10px; border-radius:8px; background:rgba(255,255,255,.08); }
+.sidebar a.active { background:rgba(255,255,255,.2); font-weight:700; }
+.content { padding:18px; display:grid; gap:12px; }
+.toolbar, .upload, .card, .kpi { background:var(--card); border-radius:10px; box-shadow:0 5px 16px rgba(25,61,118,.12); }
+.toolbar { padding:12px; display:flex; justify-content:space-between; gap:10px; align-items:center; }
+.filters { display:flex; gap:8px; flex-wrap:wrap; }
+.filters label { font-size:13px; color:var(--muted); display:grid; gap:4px; }
+input { border:1px solid #cddbf1; border-radius:8px; padding:8px; }
+.btn { border:0; background:var(--blue2); color:#fff; padding:10px 14px; border-radius:8px; font-weight:700; cursor:pointer; }
+.btn.light { background:#9cb7e9; }
+.upload { padding:14px; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.upload p { color:var(--muted); font-size:12px; margin:4px 0 8px; }
+.row-actions { grid-column:1/-1; display:flex; align-items:center; gap:10px; }
+#statusText { color:var(--muted); }
+.kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+.kpi { padding:14px; }
+.kpi p { color:var(--muted); font-size:13px; }
+.kpi strong { font-size:34px; }
+.charts { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.chart { padding:12px; min-height:320px; }
+.chart h3 { margin-bottom:8px; }
+.chart.full { grid-column:1/-1; min-height:340px; }
+.table-wrap { padding:12px; }
+table { width:100%; border-collapse:collapse; }
+th,td { border-bottom:1px solid #e5edf9; padding:8px; text-align:left; }
+th { color:var(--muted); }
+@media (max-width:1100px){ .layout{grid-template-columns:1fr;} .kpis{grid-template-columns:repeat(2,1fr);} .charts{grid-template-columns:1fr;} .chart.full{grid-column:auto;} .upload{grid-template-columns:1fr;} }
